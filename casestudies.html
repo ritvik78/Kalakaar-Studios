@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | Kalakaar Studios</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .case-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,229,204,0.1);
+            border-color: rgba(0,229,204,0.3);
+        }
+        @media(min-width: 768px) {
+            .case-card.featured {
+                flex-direction: row;
+                grid-column: 1 / -1;
+            }
+            .case-card.featured .case-img {
+                width: 50%;
+                height: auto;
+            }
+            .case-card.featured .case-content {
+                width: 50%;
+                padding: 3rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+        .case-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .case-content {
+            padding: 1.5rem;
+        }
+        .case-tag {
+            color: var(--color-teal);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .metric-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 1rem;
+        }
+        .metric {
+            flex: 1;
+        }
+        .metric-value {
+            color: var(--color-gold);
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+        .metric-label {
+            color: #888;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- Navigation Header -->
+    <header class="header scrolled" id="header" style="background-color: rgba(0,0,0,0.85); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Kalakaar<span>Studios</span></a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="category.html" class="nav-link">Categories</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">📸 Gallery</a></li>
+                    <li class="nav-item"><a href="casestudies.html" class="nav-link active">Case Studies</a></li>
+                    <li class="nav-item"><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">📞 Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-switch" id="themeToggle" aria-label="Toggle Theme">
+                    <div class="switch-track">
+                        <div class="switch-icon icon-sun">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        </div>
+                        <div class="switch-icon icon-moon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        </div>
+                        <div class="switch-thumb"></div>
+                    </div>
+                </button>
+                <button class="action-icon" id="searchTriggerBtn" aria-label="Search">🔍</button>
+                <button class="action-icon" id="profileBtn" aria-label="User Profile" title="Artist Profile" onclick="handleProfileClick()">
+                    👤
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 150px; padding-bottom: 50px; background: linear-gradient(to bottom, var(--color-bg-dark), #111);">
+        <div class="container text-center reveal fadeInUp">
+            <h1 class="section-title text-anim-split-reveal" style="font-size: 4rem;">Case <span class="text-gradient">Studies</span></h1>
+            <p class="section-subtitle">Deep dives into our most successful events and talent integrations.</p>
+        </div>
+    </section>
+
+    <!-- Grid -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="grid stagger-children" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+                
+                <!-- Featured Case Study -->
+                <div class="case-card featured">
+                    <img src="https://images.unsplash.com/photo-1540039155732-d674d0e80092?q=80&w=800&auto=format&fit=crop" class="case-img" alt="Tech Summit">
+                    <div class="case-content">
+                        <span class="case-tag">Corporate Gala</span>
+                        <h2 style="margin-bottom: 1rem;">TechGlobal Annual Summit 2025</h2>
+                        <p style="color: #aaa; margin-bottom: 1.5rem; line-height: 1.6;">How we seamlessly integrated a top-tier celebrity motivational speaker and a live band into a 3-day tech conference, handling all complex travel logistics and multi-stage technical riders.</p>
+                        <div class="metric-group">
+                            <div class="metric">
+                                <div class="metric-value">5,000+</div>
+                                <div class="metric-label">Attendees</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">48 Hrs</div>
+                                <div class="metric-label">Booking Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regular Case Study -->
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop" class="case-img" alt="Royal Wedding">
+                    <div class="case-content">
+                        <span class="case-tag">Luxury Wedding</span>
+                        <h3 style="margin-bottom: 0.5rem; font-size: 1.3rem;">The Udaipur Royal Wedding</h3>
+                        <p style="color: #aaa; font-size: 0.95rem;">Curating a 3-day musical extravaganza featuring a mix of Bollywood playback singers and international DJs.</p>
+                    </div>
+                </div>
+
+                <!-- Regular Case Study -->
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1470229722913-7c092fb46dc1?q=80&w=600&auto=format&fit=crop" class="case-img" alt="Comedy Tour">
+                    <div class="case-content">
+                        <span class="case-tag">Live Tour</span>
+                        <h3 style="margin-bottom: 0.5rem; font-size: 1.3rem;">Zakir Khan 5-City Tour</h3>
+                        <p style="color: #aaa; font-size: 0.95rem;">Managing the complete talent logistics, security, and green room coordination for a massive multi-city arena tour.</p>
+                    </div>
+                </div>
+
+                <!-- Regular Case Study -->
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=600&auto=format&fit=crop" class="case-img" alt="Product Launch">
+                    <div class="case-content">
+                        <span class="case-tag">Product Launch</span>
+                        <h3 style="margin-bottom: 0.5rem; font-size: 1.3rem;">AutoExpo Global Reveal</h3>
+                        <p style="color: #aaa; font-size: 0.95rem;">Sourcing the perfect high-energy host and celebrity endorser for an international automobile reveal.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="text-center" style="margin-top: 3rem;">
+                <button class="btn btn-outline">Load More Case Studies</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--color-black); padding: var(--space-xl) 0 var(--space-md); border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container text-center">
+            <p>&copy; 2026 Kalakaar Studios Booking Platform.</p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/interactions.js"></script>
+</body>
+</html>
+
+
+
+
+

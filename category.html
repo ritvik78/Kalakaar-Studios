@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Talent Categories | Kalakaar Studios</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .filter-btn.active {
+            background-color: var(--color-teal);
+            color: var(--color-black);
+            border-color: var(--color-teal);
+        }
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- Navigation Header -->
+    <header class="header" id="header" style="background-color: rgba(0,0,0,0.85); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Kalakaar<span>Studios</span></a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="category.html" class="nav-link">🎭 Talent Categories</a>
+                        <!-- Mega Menu -->
+                        <div class="dropdown-menu mega-menu">
+                            <div class="mega-menu-grid">
+                                <div>
+                                    <h4 class="mega-menu-title">Music & Comedy</h4>
+                                    <ul>
+                                        <li><a href="#" class="dropdown-item">Singers/Bands</a></li>
+                                        <li><a href="#" class="dropdown-item">Stand-up Comedians</a></li>
+                                        <li><a href="#" class="dropdown-item">DJs</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="mega-menu-title">Speakers & Hosts</h4>
+                                    <ul>
+                                        <li><a href="#" class="dropdown-item">Motivational Speakers</a></li>
+                                        <li><a href="#" class="dropdown-item">Event Anchors/MCs</a></li>
+                                        <li><a href="#" class="dropdown-item">Sports Personalities</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="mega-menu-title">Specialty Acts</h4>
+                                    <ul>
+                                        <li><a href="#" class="dropdown-item">Unique Acts - Indian</a></li>
+                                        <li><a href="#" class="dropdown-item">Celebrity Dance Performers</a></li>
+                                        <li><a href="#" class="dropdown-item">Influencers</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">📸 Gallery</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">📝 Blog</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">🏢 About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">📞 Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-switch" id="themeToggle" aria-label="Toggle Theme">
+                    <div class="switch-track">
+                        <div class="switch-icon icon-sun">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        </div>
+                        <div class="switch-icon icon-moon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        </div>
+                        <div class="switch-thumb"></div>
+                    </div>
+                </button>
+                <button class="action-icon" id="searchTriggerBtn" aria-label="Search">🔍</button>
+                <button class="action-icon" id="profileBtn" aria-label="User Profile" title="Artist Profile" onclick="handleProfileClick()">
+                    👤
+                </button>
+                <a href="#booking" class="btn btn-sm" style="margin-left: 10px; background: var(--color-teal); color: var(--color-black); font-weight: bold; border: none;">⚡ Book Now</a>
+                <button class="hamburger" id="hamburgerMenu" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 150px; padding-bottom: 50px; background: linear-gradient(to bottom, var(--color-bg-dark), #111);">
+        <div class="container text-center reveal fadeInUp">
+            <h1 class="section-title text-anim-split-reveal" style="font-size: 4rem;">Talent <span class="text-gradient">Categories</span></h1>
+            <p class="section-subtitle">Find the perfect match for your next event.</p>
+        </div>
+    </section>
+
+    <!-- Filter & Grid -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <!-- Filtering -->
+            <div class="filter-group reveal fadeInUp">
+                <button class="btn btn-sm filter-btn active" data-filter="all">All</button>
+                <button class="btn btn-sm filter-btn" data-filter="music">Music</button>
+                <button class="btn btn-sm filter-btn" data-filter="comedy">Comedy</button>
+                <button class="btn btn-sm filter-btn" data-filter="speakers">Speakers</button>
+                <button class="btn btn-sm filter-btn" data-filter="hosts">Hosts & MCs</button>
+                <button class="btn btn-sm filter-btn" data-filter="celebrity">Celebrities</button>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid category-grid stagger-children">
+                <div class="category-card" data-category="music">
+                    <img src="assets/images/SUNBURN.jpg" class="category-img" alt="Singers">
+                    <div class="category-overlay">
+                        <h3 class="category-title">Singers / Bands</h3>
+                        <div class="category-action"><a href="individual-category.html" class="btn-sm">Explore All</a></div>
+                    </div>
+                </div>
+                <div class="category-card" data-category="comedy">
+                    <img src="https://images.unsplash.com/photo-1585699324551-f6c309eedeca?q=80&w=800&auto=format&fit=crop" class="category-img" alt="Comedians">
+                    <div class="category-overlay">
+                        <h3 class="category-title">Stand-up Comedians</h3>
+                        <div class="category-action"><a href="individual-category.html" class="btn-sm">Explore All</a></div>
+                    </div>
+                </div>
+                <div class="category-card" data-category="speakers">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" class="category-img" alt="Speakers">
+                    <div class="category-overlay">
+                        <h3 class="category-title">Motivational Speakers</h3>
+                        <div class="category-action"><a href="individual-category.html" class="btn-sm">Explore All</a></div>
+                    </div>
+                </div>
+                <div class="category-card" data-category="music">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop" class="category-img" alt="DJs">
+                    <div class="category-overlay">
+                        <h3 class="category-title">DJs</h3>
+                        <div class="category-action"><a href="individual-category.html" class="btn-sm">Explore All</a></div>
+                    </div>
+                </div>
+                <div class="category-card" data-category="hosts">
+                    <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?q=80&w=800&auto=format&fit=crop" class="category-img" alt="Anchors">
+                    <div class="category-overlay">
+                        <h3 class="category-title">Event Anchors / MCs</h3>
+                        <div class="category-action"><a href="individual-category.html" class="btn-sm">Explore All</a></div>
+                    </div>
+                </div>
+                <div class="category-card" data-category="celebrity">
+                    <img src="assets/images/FILMFAIR.jpg" class="category-img" alt="Actors">
+                    <div class="category-overlay">
+                        <h3 class="category-title">Film / TV Actors</h3>
+                        <div class="category-action"><a href="individual-category.html" class="btn-sm">Explore All</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--color-black); padding: var(--space-xl) 0 var(--space-md); position: relative; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container grid" style="grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr; gap: var(--space-lg); position: relative; z-index: 1;">
+            <div>
+                <a href="index.html" class="logo">Kalakaar<span>Studios</span></a>
+                <p style="margin-top: 1rem; color: #aaa; font-size: 0.9rem;">Engaging Talent, Creating Experiences</p>
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <a href="#" style="color: white; background: rgba(255,255,255,0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">FB</a>
+                    <a href="#" style="color: white; background: rgba(255,255,255,0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">IG</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="text-transform: uppercase; margin-bottom: 1.5rem;">Quick Links</h4>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem; color: #aaa;">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="text-transform: uppercase; margin-bottom: 1.5rem;">Contact Us</h4>
+                <p style="color: #aaa;">info@Kalakaarstudios.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/text-animations.js"></script>
+    <script>
+        // Simple Filter Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.category-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.getAttribute('data-filter');
+
+                    cards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => { card.style.display = 'none'; }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

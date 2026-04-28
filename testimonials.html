@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonials | Kalakaar Studios</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- Navigation Header -->
+    <header class="header scrolled" id="header" style="background-color: rgba(0,0,0,0.85); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Kalakaar<span>Studios</span></a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="category.html" class="nav-link">Categories</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">📸 Gallery</a></li>
+                    <li class="nav-item"><a href="casestudies.html" class="nav-link">Case Studies</a></li>
+                    <li class="nav-item"><a href="testimonials.html" class="nav-link active">Testimonials</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">📞 Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-switch" id="themeToggle" aria-label="Toggle Theme">
+                    <div class="switch-track">
+                        <div class="switch-icon icon-sun">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        </div>
+                        <div class="switch-icon icon-moon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        </div>
+                        <div class="switch-thumb"></div>
+                    </div>
+                </button>
+                <button class="action-icon" id="searchTriggerBtn" aria-label="Search">🔍</button>
+                <button class="action-icon" id="profileBtn" aria-label="User Profile" title="Artist Profile" onclick="handleProfileClick()">
+                    👤
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 150px; padding-bottom: 50px; background: linear-gradient(to bottom, var(--color-bg-dark), #111);">
+        <div class="container text-center reveal fadeInUp">
+            <h1 class="section-title text-anim-split-reveal" style="font-size: 4rem;">Client <span class="text-gradient">Love</span></h1>
+            <p class="section-subtitle">Don't just take our word for it. Hear from our incredible partners.</p>
+        </div>
+    </section>
+
+    <!-- Video Testimonials Archive -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="grid stagger-children" style="grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 3rem;">
+                
+                <!-- Video Review 1 -->
+                <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
+                    <div style="position: relative; padding-top: 56.25%;">
+                        <iframe style="position: absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h4 style="color: var(--color-gold); margin-bottom: 0.5rem;">"The easiest booking experience ever."</h4>
+                        <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 1rem;">Kalakaar Studios completely transformed our annual tech summit. Booking a celebrity speaker was a breeze.</p>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100&auto=format&fit=crop" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h5 style="margin: 0; color: white;">David Chen</h5>
+                                <span style="font-size: 0.8rem; color: var(--color-teal);">CMO, TechGlobal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Review 2 -->
+                <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
+                    <div style="position: relative; padding-top: 56.25%;">
+                        <iframe style="position: absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h4 style="color: var(--color-gold); margin-bottom: 0.5rem;">"Highly professional and transparent."</h4>
+                        <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 1rem;">From contract negotiation to on-ground execution, the team was flawless. Highly recommended.</p>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100&auto=format&fit=crop" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h5 style="margin: 0; color: white;">Sarah Jenkins</h5>
+                                <span style="font-size: 0.8rem; color: var(--color-teal);">Event Director, Apex Events</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Review -->
+                <div style="background: rgba(255,255,255,0.02); border-radius: 12px; padding: 2rem; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="color: var(--color-gold); font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
+                        <p style="color: #eee; font-style: italic; font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                            "We were stressed about getting a high-profile stand-up comedian for our corporate party. Kalakaar Studios secured the date within 48 hours and handled all the technical riders. Simply amazing!"
+                        </p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h5 style="margin: 0; color: white;">Michael Ross</h5>
+                            <span style="font-size: 0.8rem; color: var(--color-teal);">HR Head, FinServe</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--color-black); padding: var(--space-xl) 0 var(--space-md); border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container text-center">
+            <p>&copy; 2026 Kalakaar Studios Booking Platform.</p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/interactions.js"></script>
+</body>
+</html>
+
+
+
+
+

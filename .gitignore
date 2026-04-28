@@ -1,0 +1,14 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# Build/output
+/dist/
+/build/

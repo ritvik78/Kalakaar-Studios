@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Partner With Us | Kalakaar Studios</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- Navigation Header -->
+    <header class="header scrolled" id="header" style="background-color: rgba(0,0,0,0.85); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Kalakaar<span>Studios</span></a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="category.html" class="nav-link">Categories</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">📸 Gallery</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">🏢 About</a></li>
+                    <li class="nav-item"><a href="partner.html" class="nav-link active">Partner</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">📞 Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-switch" id="themeToggle" aria-label="Toggle Theme">
+                    <div class="switch-track">
+                        <div class="switch-icon icon-sun">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        </div>
+                        <div class="switch-icon icon-moon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        </div>
+                        <div class="switch-thumb"></div>
+                    </div>
+                </button>
+                <button class="action-icon" id="searchTriggerBtn" aria-label="Search">🔍</button>
+                <button class="action-icon" id="profileBtn" aria-label="User Profile" title="Artist Profile" onclick="handleProfileClick()">
+                    👤
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 150px; padding-bottom: 80px; background: linear-gradient(to bottom, var(--color-bg-dark), #111);">
+        <div class="container text-center reveal fadeInUp">
+            <h1 class="section-title text-anim-split-reveal" style="font-size: 4rem;">Why <span class="text-gradient">Partner</span> With Us</h1>
+            <p class="section-subtitle">The industry standard in premium talent booking.</p>
+        </div>
+    </section>
+
+    <!-- USPs -->
+    <section class="section" style="padding-top: 2rem;">
+        <div class="container">
+            <div class="grid stagger-children" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="background: rgba(255,255,255,0.02); padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(0,229,204,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='none'">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+                    <h3 style="color: var(--color-white); margin-bottom: 1rem;">Direct Access</h3>
+                    <p style="color: #bbb; line-height: 1.6;">We bypass middlemen. Our direct relationships with artists and their exclusive management mean faster approvals and better pricing.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(255,215,0,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='none'">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🛡️</div>
+                    <h3 style="color: var(--color-white); margin-bottom: 1rem;">Secure Contracts</h3>
+                    <p style="color: #bbb; line-height: 1.6;">Our legal framework protects both the client and the artist, ensuring foolproof agreements, clear rider fulfillment, and payment security.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(138,43,226,0.3); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='none'">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⏱️</div>
+                    <h3 style="color: var(--color-white); margin-bottom: 1rem;">24/7 Logistics</h3>
+                    <p style="color: #bbb; line-height: 1.6;">From flight bookings to on-ground transport and green room management, our dedicated ops team handles everything seamlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background-color: var(--color-bg-dark);">
+        <div class="container" style="max-width: 800px;">
+            <div class="text-center reveal fadeInUp">
+                <h2 class="section-title">Common <span class="text-gradient">Questions</span></h2>
+            </div>
+            
+            <div style="margin-top: 3rem;">
+                <div style="background: rgba(255,255,255,0.03); margin-bottom: 1rem; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--color-teal);">
+                    <h4 style="color: white; margin-bottom: 0.5rem;">Do you charge a booking fee?</h4>
+                    <p style="color: #aaa; margin: 0;">Our pricing is fully transparent. The quoted price includes the artist fee and our agency commission. Travel and technical riders are billed at actuals.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); margin-bottom: 1rem; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--color-gold);">
+                    <h4 style="color: white; margin-bottom: 0.5rem;">What happens if the artist cancels?</h4>
+                    <p style="color: #aaa; margin: 0;">In the rare event of a cancellation due to force majeure, our contracts ensure a 100% refund or an immediate replacement of equal caliber, depending on your preference.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); margin-bottom: 1rem; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--color-purple);">
+                    <h4 style="color: white; margin-bottom: 0.5rem;">Can you handle international bookings?</h4>
+                    <p style="color: #aaa; margin: 0;">Yes. We have a dedicated division for securing international visas, work permits, and global travel logistics for artists flying into India or vice versa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--color-black); padding: var(--space-xl) 0 var(--space-md); border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container text-center">
+            <p>&copy; 2026 Kalakaar Studios Booking Platform.</p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/interactions.js"></script>
+</body>
+</html>
+
+
+
+
+

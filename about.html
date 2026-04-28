@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Kalakaar Studios</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- Navigation Header -->
+    <header class="header scrolled" id="header" style="background-color: rgba(0,0,0,0.85); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Kalakaar<span>Studios</span></a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="category.html" class="nav-link">🎭 Talent Categories</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">📸 Gallery</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">📝 Blog</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">📞 Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-switch" id="themeToggle" aria-label="Toggle Theme">
+                    <div class="switch-track">
+                        <div class="switch-icon icon-sun">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        </div>
+                        <div class="switch-icon icon-moon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        </div>
+                        <div class="switch-thumb"></div>
+                    </div>
+                </button>
+                <button class="action-icon" id="searchTriggerBtn" aria-label="Search">🔍</button>
+                <button class="action-icon" id="profileBtn" aria-label="User Profile" title="Artist Profile" onclick="handleProfileClick()">
+                    👤
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 150px; padding-bottom: 80px; background: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat; position: relative;">
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.7);"></div>
+        <div class="container text-center reveal fadeInUp" style="position: relative; z-index: 1;">
+            <h1 class="section-title text-anim-split-reveal" style="font-size: 4rem;">Our <span class="text-gradient">Story</span></h1>
+            <p class="section-subtitle">Connecting world-class talent with unforgettable events since 2010.</p>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="section" style="padding-top: 5rem;">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="reveal fadeInLeft">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--color-white);">Redefining Talent Management</h2>
+                    <p style="color: #bbb; line-height: 1.8; margin-bottom: 1.5rem;">
+                        Founded on the belief that extraordinary talent is the cornerstone of any successful event, Kalakaar Studios started as a small boutique agency in Mumbai. Over the past decade, we have grown into India's leading talent booking platform.
+                    </p>
+                    <p style="color: #bbb; line-height: 1.8; margin-bottom: 1.5rem;">
+                        We represent a curated roster of artists spanning across music, comedy, motivational speaking, and celebrity endorsements. Our mission is to provide an organized, transparent, and seamless booking experience for event planners, agencies, and brands.
+                    </p>
+                    <div style="display: flex; gap: 2rem; margin-top: 2rem;">
+                        <div>
+                            <h3 style="color: var(--color-teal); font-size: 2rem;">15+</h3>
+                            <p style="color: #888; font-size: 0.9rem; text-transform: uppercase;">Years Experience</p>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--color-gold); font-size: 2rem;">10K+</h3>
+                            <p style="color: #888; font-size: 0.9rem; text-transform: uppercase;">Events Executed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal fadeInRight" style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                    <div style="position: absolute; bottom: -20px; left: -20px; background: var(--color-bg-dark); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(0,229,204,0.3);">
+                        <p style="font-style: italic; color: #ccc;">"Talent is ubiquitous, but the right platform is rare."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="section" style="background-color: var(--color-bg-dark);">
+        <div class="container text-center">
+            <h2 class="section-title reveal fadeInUp">Our <span class="text-gradient">Leadership</span></h2>
+            <p class="section-subtitle">The minds behind the magic.</p>
+
+            <div class="grid stagger-children" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); margin-top: 3rem;">
+                <!-- Team Member -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 2rem; transition: transform var(--trans-standard);" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='none'">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&auto=format&fit=crop" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 3px solid var(--color-teal);">
+                    <h3 style="color: var(--color-white); margin-bottom: 0.5rem;">Qaima Hussain</h3>
+                    <p style="color: var(--color-teal); font-size: 0.9rem; text-transform: uppercase;">Founder</p>
+                </div>
+                <!-- Team Member -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 2rem; transition: transform var(--trans-standard);" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='none'">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300&auto=format&fit=crop" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 3px solid var(--color-gold);">
+                    <h3 style="color: var(--color-white); margin-bottom: 0.5rem;">Ashutosh Ranjan</h3>
+                    <p style="color: var(--color-gold); font-size: 0.9rem; text-transform: uppercase;">CEO</p>
+                </div>
+                <!-- Team Member -->
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 2rem; transition: transform var(--trans-standard);" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='none'">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&auto=format&fit=crop" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 3px solid var(--color-purple);">
+                    <h3 style="color: var(--color-white); margin-bottom: 0.5rem;">Ali Hussain</h3>
+                    <p style="color: var(--color-purple); font-size: 0.9rem; text-transform: uppercase;">NAUKAR</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--color-black); padding: var(--space-xl) 0 var(--space-md); border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container text-center">
+            <p>&copy; 2026 Kalakaar Studios Booking Platform.</p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/text-animations.js"></script>
+</body>
+</html>
+
+
+
+
+

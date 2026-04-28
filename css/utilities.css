@@ -1,0 +1,352 @@
+/* ============================================================
+   UTILITIES.CSS – Buttons, Badges, and UI Elements
+   ============================================================ */
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  font-size: var(--text-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  transition: all var(--trans-standard);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  font-family: var(--font-secondary);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: 1px solid var(--color-teal);
+  box-shadow: 0 0 15px rgba(0, 229, 204, 0.2);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--grad-hover);
+  z-index: -1;
+  transition: opacity var(--trans-standard);
+  opacity: 0;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 229, 204, 0.5);
+  border-color: transparent;
+  color: #fff;
+  letter-spacing: 1.5px;
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+}
+
+.btn-outline:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.btn-text {
+  background: transparent;
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-text::after {
+  content: '→';
+  transition: transform var(--trans-fast);
+}
+
+.btn-text:hover::after {
+  transform: translateX(5px);
+}
+
+.btn-text:hover {
+  color: var(--color-teal);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: var(--text-small);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  font-family: var(--font-ui);
+}
+
+.btn-sm:hover {
+  background: var(--color-teal);
+  border-color: var(--color-teal);
+  color: var(--color-black);
+}
+
+/* --- Badges --- */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: var(--font-ui);
+}
+
+.badge-primary {
+  background: var(--color-teal);
+  color: var(--color-black);
+}
+
+.badge-secondary {
+  background: var(--color-purple);
+  color: var(--color-white);
+}
+
+.badge-warning {
+  background: var(--color-amber);
+  color: var(--color-black);
+}
+
+.badge-notification {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: var(--color-pink);
+  color: white;
+  font-size: 0.7rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* --- Scroll Progress --- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--grad-accent);
+  z-index: 9998;
+  width: 0;
+}
+
+/* --- Preloader --- */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-bg-dark);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+
+.loader-shape {
+  width: 60px;
+  height: 60px;
+  background: var(--grad-accent);
+  animation: preloaderPulse 2s infinite, morphIcon 4s infinite;
+}
+
+/* --- Custom Cursor --- */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              height 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              background-color 0.3s ease, 
+              border 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  mix-blend-mode: normal;
+}
+
+.custom-cursor.hover {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 215, 0, 0.15);
+  border: 1px dashed rgba(255, 215, 0, 0.9);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  backdrop-filter: blur(2px);
+  animation: cursorPulseEffect 1.5s ease-in-out infinite;
+}
+
+@keyframes cursorPulseEffect {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+    border-radius: 50%;
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0);
+    border-radius: 40%;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+    border-radius: 50%;
+  }
+}
+
+.custom-cursor.magnetic {
+  transition: all 0.1s;
+}
+
+/* --- Availability Calendar --- */
+.availability-calendar {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.availability-cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.availability-cal-title {
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 0.5px;
+}
+
+.availability-cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255,255,255,0.6);
+  font-size: var(--text-caption);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.availability-cal-weekdays > div {
+  text-align: center;
+}
+
+.availability-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.availability-day {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.02);
+  color: rgba(255,255,255,0.85);
+  border-radius: 10px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform var(--trans-fast), background var(--trans-fast), border-color var(--trans-fast);
+  font-family: var(--font-ui);
+}
+
+.availability-day:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0,229,204,0.35);
+}
+
+.availability-day--other {
+  opacity: 0.35;
+}
+
+.availability-day--readonly {
+  cursor: default;
+  transform: none;
+}
+
+.availability-day--readonly:hover {
+  transform: none;
+  border-color: rgba(255,255,255,0.10);
+}
+
+.availability-day--available {
+  background: rgba(6,255,165,0.12);
+  border-color: rgba(6,255,165,0.35);
+}
+
+.availability-day--unavailable {
+  background: rgba(255,0,110,0.10);
+  border-color: rgba(255,0,110,0.35);
+}
+
+.availability-cal-legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  color: rgba(255,255,255,0.75);
+  font-size: var(--text-small);
+}
+
+.availability-cal-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.availability-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.20);
+}
+
+.availability-dot--available {
+  background: rgba(6,255,165,0.8);
+  border-color: rgba(6,255,165,0.9);
+}
+
+.availability-dot--unavailable {
+  background: rgba(255,0,110,0.8);
+  border-color: rgba(255,0,110,0.9);
+}
+
+.availability-dot--unknown {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.availability-mode--active {
+  background: rgba(0,229,204,0.12);
+  border-color: rgba(0,229,204,0.55);
+}

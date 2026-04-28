@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Choose the Perfect Talent | Kalakaar Studios Blog</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .article-content h2 {
+            font-family: var(--font-primary);
+            color: var(--color-white);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        .article-content blockquote {
+            border-left: 4px solid var(--color-teal);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--color-white);
+        }
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: rgba(255,255,255,0.03);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 4rem;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .author-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- Navigation Header -->
+    <header class="header scrolled" id="header" style="background-color: rgba(0,0,0,0.85); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Kalakaar<span>Studios</span></a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="category.html" class="nav-link">🎭 Talent Categories</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">📸 Gallery</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">📝 Blog</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">🏢 About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">📞 Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-switch" id="themeToggle" aria-label="Toggle Theme">
+                    <div class="switch-track">
+                        <span class="switch-icon sun-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        </span>
+                        <span class="switch-icon moon-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        </span>
+                        <div class="switch-thumb"></div>
+                    </div>
+                </button>
+                <button class="action-icon" id="searchTriggerBtn" aria-label="Search">🔍</button>
+                <button class="action-icon" id="profileBtn" aria-label="User Profile" title="Artist Profile" onclick="handleProfileClick()">
+                    👤
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Hero -->
+    <section style="position: relative; padding-top: 150px; padding-bottom: 80px; background: url('https://images.unsplash.com/photo-1540039155732-d674d0e80092?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;">
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.7);"></div>
+        <div class="container text-center reveal fadeInUp" style="position: relative; z-index: 1; max-width: 800px;">
+            <div style="color: var(--color-teal); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 1rem;">Event Planning • October 12, 2025</div>
+            <h1 class="text-anim-split-reveal" style="font-size: 3.5rem; line-height: 1.2; margin-bottom: 1.5rem;">How to Choose the Perfect Talent for Your Corporate Annual Gala</h1>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" alt="Author">
+                <span style="color: #ddd;">By James Wilson</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Content -->
+    <section class="section" style="padding-top: 3rem;">
+        <div class="container" style="max-width: 800px;">
+            <div class="article-content">
+                <p>Planning a corporate gala is no small feat. From selecting the right venue to managing the guest list, every detail matters. But perhaps the most critical element that can make or break your event is the talent you choose to entertain your guests.</p>
+                
+                <p>The right performer can elevate the atmosphere, create lasting memories, and reinforce your brand's message. Here is a step-by-step guide to helping you make the perfect choice.</p>
+
+                <h2>1. Understand Your Audience</h2>
+                <p>Before you even look at a roster of artists, you need to understand who will be in the room. Are they C-suite executives who might appreciate a sophisticated jazz band, or is it a younger tech team that would prefer an energetic DJ or a popular stand-up comedian?</p>
+                
+                <blockquote>"The biggest mistake planners make is booking talent they personally like, rather than what their audience will enjoy."</blockquote>
+
+                <h2>2. Define the Event's Objective</h2>
+                <p>What is the goal of the gala? Is it an awards night where a skilled MC or host is required to keep the energy high and the schedule tight? Or is it an end-of-year celebration where the sole purpose is for everyone to let their hair down and dance?</p>
+
+                <h2>3. Consider Logistics and Budget</h2>
+                <p>It's crucial to be realistic about your budget. Remember that booking a celebrity act isn't just about their performance fee; it also includes travel, accommodation, technical riders (sound and lighting requirements), and hospitality.</p>
+
+                <h2>4. Work with a Reputable Booking Agency</h2>
+                <p>Navigating contracts, negotiations, and specific rider requests can be incredibly complex. Working with a dedicated talent booking platform like Kalakaar Studios ensures that all legalities are handled professionally and that you have a single point of contact for all talent-related queries.</p>
+
+                <!-- Author Box -->
+                <div class="author-box">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop" class="author-img" alt="James Wilson">
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: var(--color-white);">James Wilson</h4>
+                        <p style="font-size: 0.95rem; margin-bottom: 0;">James is a Senior Talent Buyer at Kalakaar Studios with over 15 years of experience in curating entertainment for Fortune 500 company events globally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--color-black); padding: var(--space-xl) 0 var(--space-md); border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container text-center">
+            <p>&copy; 2026 Kalakaar Studios Booking Platform.</p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/text-animations.js"></script>
+</body>
+</html>
+
+
+
+
+

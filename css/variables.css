@@ -1,0 +1,104 @@
+/* ============================================================
+   VARIABLES.CSS – Complete Design System Tokens
+   ============================================================ */
+
+:root {
+  /* Primary Colors */
+  --color-black: #0A0A0A;
+  --color-white: #FFFFFF;
+  --color-charcoal: #2D2D2D;
+  --color-gray: #F5F5F5;
+
+  /* Accent Colors */
+  --color-gold: #D4AF37;
+  --color-amber: #FFB800;
+  --color-bronze: #CD7F32;
+
+  /* Animation & Highlight Colors */
+  --color-teal: #00E5CC;
+  --color-purple: #9D4EDD;
+  --color-pink: #FF006E;
+  --color-blue: #00B4D8;
+  --color-lime: #06FFA5;
+
+  /* Semantic Colors */
+  --color-success: #06FFA5;
+  --color-warning: #FFB800;
+  --color-error: #FF006E;
+  --color-info: #00B4D8;
+
+  /* Gradients (12 Variations) */
+  --grad-purple-dream: linear-gradient(135deg, #9D4EDD 0%, #FF006E 100%);
+  --grad-ocean-wave: linear-gradient(135deg, #00B4D8 0%, #00E5CC 100%);
+  --grad-sunset-blaze: linear-gradient(135deg, #FF006E 0%, #FFB800 100%);
+  --grad-night-sky: linear-gradient(180deg, #0A0A0A 0%, #2D2D2D 100%);
+  --grad-gold-rush: linear-gradient(90deg, #D4AF37 0%, #FFB800 100%);
+  --grad-cosmic-purple: linear-gradient(135deg, #4A00E0 0%, #9D4EDD 100%);
+  --grad-arctic-blue: linear-gradient(135deg, #00E5CC 0%, #06FFA5 100%);
+  --grad-rose-gold: linear-gradient(135deg, #FFB800 0%, #FF006E 50%, #9D4EDD 100%);
+  --grad-dark-elegance: linear-gradient(135deg, #0A0A0A 0%, #9D4EDD 100%);
+  --grad-electric-storm: linear-gradient(135deg, #00B4D8 0%, #9D4EDD 50%, #FF006E 100%);
+  --grad-golden-hour: linear-gradient(90deg, #D4AF37 0%, #FFB800 50%, #FF006E 100%);
+  --grad-deep-ocean: linear-gradient(180deg, #00B4D8 0%, #0A0A0A 100%);
+
+  /* Backward Compatibility with old styles */
+  --color-primary: var(--color-black);
+  --color-bg-dark: var(--color-black);
+  --color-bg-light: var(--color-gray);
+  --color-accent-gold: var(--color-gold);
+  --grad-hover: var(--grad-purple-dream);
+  --grad-accent: var(--grad-ocean-wave);
+  --grad-overlay: linear-gradient(to top, rgba(10,10,10,0.9), transparent);
+
+  /* Typography System */
+  --font-display: 'Roboto', sans-serif;
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+  --font-ui: 'Roboto', sans-serif;
+  --font-accent: 'Roboto', sans-serif;
+  --font-header: var(--font-primary); /* fallback */
+  
+  /* Type Scale (Fluid) */
+  --text-hero: clamp(42px, 5vw, 72px);
+  --text-h1: clamp(36px, 4vw, 56px);
+  --text-h2: clamp(28px, 3.5vw, 42px);
+  --text-h3: clamp(24px, 3vw, 32px);
+  --text-h4: clamp(20px, 2.5vw, 24px);
+  --text-body-large: clamp(16px, 1.5vw, 18px);
+  --text-body: 16px;
+  --text-small: 14px;
+  --text-caption: 12px;
+
+  /* Line Heights */
+  --lh-hero: clamp(52px, 6vw, 84px);
+  --lh-h1: clamp(44px, 5vw, 64px);
+  --lh-h2: clamp(36px, 4.5vw, 52px);
+  --lh-h3: clamp(32px, 4vw, 40px);
+  --lh-h4: clamp(28px, 3.5vw, 32px);
+  --lh-body-large: 28px;
+  --lh-body: 24px;
+  --lh-small: 20px;
+  --lh-caption: 16px;
+
+  /* Transitions */
+  --trans-fast: 200ms ease-out;
+  --trans-standard: 400ms ease-in-out;
+  --trans-slow: 600ms cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+}
+
+[data-theme="light"] {
+  --color-primary: var(--color-white);
+  --color-white: var(--color-black); /* Inverted for light mode */
+  --color-charcoal: #E0E0E0;
+  --color-bg-dark: var(--color-gray);
+  --color-bg-light: #FFFFFF;
+  --grad-overlay: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+}
