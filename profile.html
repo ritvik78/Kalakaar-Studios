@@ -62,12 +62,12 @@
             <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem;">
                 <div>
                     <span class="badge" style="background: var(--color-gold); color: black; margin-bottom: 1rem;">Premium Talent</span>
-                    <h1 class="text-anim-split-reveal" style="font-size: 4.5rem; line-height: 1; margin-bottom: 0.5rem; text-shadow: 0 5px 15px rgba(0,0,0,0.5);">Zakir Khan</h1>
-                    <p style="font-size: 1.2rem; color: #eee; font-style: italic;">"Sakht Launda" - India's biggest stand-up comedian</p>
+                    <h1 id="profileStageName" class="text-anim-split-reveal" style="font-size: 4.5rem; line-height: 1; margin-bottom: 0.5rem; text-shadow: 0 5px 15px rgba(0,0,0,0.5);">Zakir Khan</h1>
+                    <p id="profileTagline" style="font-size: 1.2rem; color: #eee; font-style: italic;">"Sakht Launda" - India's biggest stand-up comedian</p>
                 </div>
                 <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); text-align: center;">
                     <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 0.5rem;">Starting from</p>
-                    <h3 style="color: var(--color-teal); font-size: 1.8rem; margin-bottom: 1rem;">₹ 5,00,000<span style="font-size: 0.8rem; color:#aaa;">/event</span></h3>
+                    <h3 style="color: var(--color-teal); font-size: 1.8rem; margin-bottom: 1rem;">₹ <span id="profileBasePrice">5,00,000</span><span style="font-size: 0.8rem; color:#aaa;">/event</span></h3>
                     <button class="btn btn-primary ripple-effect" style="width: 100%;">Book Zakir</button>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                 <!-- Main Content -->
                 <div>
                     <h3 style="margin-bottom: 1.5rem; color: var(--color-teal); border-bottom: 1px solid rgba(0,229,204,0.3); padding-bottom: 0.5rem;">Biography</h3>
-                    <p style="color: #bbb; line-height: 1.8; margin-bottom: 1.5rem;">
+                    <p id="profileBio" style="color: #bbb; line-height: 1.8; margin-bottom: 1.5rem;">
                         Zakir Khan is one of the most loved and celebrated stand-up comedians in India. Known for his unique storytelling style and exceptional comic timing, he has won the hearts of millions with his relatable humor and iconic punchlines like "Sakht Launda". 
                     </p>
                     <p style="color: #bbb; line-height: 1.8; margin-bottom: 3rem;">
@@ -108,7 +108,7 @@
                         <ul style="list-style: none; padding: 0;">
                             <li style="display: flex; justify-content: space-between; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">
                                 <span style="color: #888;">Category</span>
-                                <strong>Stand-up Comedy</strong>
+                                <strong id="profileCategory">Stand-up Comedy</strong>
                             </li>
                             <li style="display: flex; justify-content: space-between; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">
                                 <span style="color: #888;">Language</span>
@@ -120,7 +120,7 @@
                             </li>
                             <li style="display: flex; justify-content: space-between; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem;">
                                 <span style="color: #888;">Travels From</span>
-                                <strong>Mumbai, India</strong>
+                                <strong id="profileBaseCity">Mumbai, India</strong>
                             </li>
                         </ul>
                     </div>
@@ -170,6 +170,47 @@
     <script src="js/interactions.js"></script>
     <script src="js/availability.js"></script>
     <script src="js/text-animations.js"></script>
+    <script>
+        (() => {
+            const PROFILE_STORAGE_KEY = 'artistPublicProfile';
+
+            const applyProfileDraftToPublicProfile = () => {
+                let data = {};
+                try {
+                    const raw = localStorage.getItem(PROFILE_STORAGE_KEY);
+                    data = raw ? JSON.parse(raw) : {};
+                } catch {
+                    data = {};
+                }
+
+                const setText = (id, value) => {
+                    const el = document.getElementById(id);
+                    if (!el) return;
+                    if (value === undefined || value === null || String(value).trim() === '') return;
+                    el.textContent = String(value);
+                };
+
+                setText('profileStageName', data.stageName);
+                setText('profileTagline', data.tagline);
+                setText('profileBio', data.bio);
+
+                // Category (dashboard uses plural labels; public profile can show the same string)
+                setText('profileCategory', data.category);
+                setText('profileBaseCity', data.baseCity);
+
+                if (typeof data.basePrice === 'number' && Number.isFinite(data.basePrice)) {
+                    const formatted = new Intl.NumberFormat('en-IN').format(data.basePrice);
+                    setText('profileBasePrice', formatted);
+                }
+            };
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', applyProfileDraftToPublicProfile);
+            } else {
+                applyProfileDraftToPublicProfile();
+            }
+        })();
+    </script>
 </body>
 </html>
 

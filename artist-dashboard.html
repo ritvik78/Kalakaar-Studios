@@ -243,7 +243,7 @@
                         </div>
                         <div class="form-group">
                             <label>Primary Talent Category</label>
-                            <select class="form-control">
+                            <select id="artistCategory" class="form-control">
                                 <option>Singers/Bands</option>
                                 <option selected>Stand-up Comedians</option>
                                 <option>DJs</option>
@@ -254,22 +254,22 @@
 
                     <div class="form-group">
                         <label>Tagline / Short Intro</label>
-                        <input type="text" class="form-control" value="&quot;Sakht Launda&quot; - India's biggest stand-up comedian">
+                        <input id="artistTagline" type="text" class="form-control" value="&quot;Sakht Launda&quot; - India's biggest stand-up comedian">
                     </div>
 
                     <div class="form-group">
                         <label>Full Biography</label>
-                        <textarea class="form-control">Zakir Khan is one of the most loved and celebrated stand-up comedians in India...</textarea>
+                        <textarea id="artistBio" class="form-control">Zakir Khan is one of the most loved and celebrated stand-up comedians in India...</textarea>
                     </div>
                     
                     <div class="grid-2">
                         <div class="form-group">
                             <label>Base City</label>
-                            <input type="text" class="form-control" value="Mumbai, India">
+                            <input id="artistBaseCity" type="text" class="form-control" value="Mumbai, India">
                         </div>
                         <div class="form-group">
                             <label>Years of Experience</label>
-                            <input type="number" class="form-control" value="12">
+                            <input id="artistExperience" type="number" class="form-control" value="12">
                         </div>
                     </div>
                 </form>
@@ -307,12 +307,12 @@
                                 <p style="color: #aaa; font-size: 0.9rem;">https://youtu.be/s1tAYmMjLdY</p>
                             </div>
                         </div>
-                        <button class="btn-sm" style="border-color: #ff4444; color: #ff4444;">Remove</button>
+                        <button type="button" class="btn-sm" data-action="remove-item" style="border-color: #ff4444; color: #ff4444;">Remove</button>
                     </div>
                     
                     <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                         <input type="text" class="form-control" placeholder="Paste video URL here...">
-                        <button class="btn-sm" style="background: var(--color-teal); color: black; border: none; white-space: nowrap;">Add Video</button>
+                        <button type="button" class="btn-sm" data-action="add-video" style="background: var(--color-teal); color: black; border: none; white-space: nowrap;">Add Video</button>
                     </div>
                 </div>
             </div>
@@ -321,7 +321,7 @@
             <div id="events" class="tab-content">
                 <div class="section-header">
                     <h2>Event History</h2>
-                    <button class="btn-sm" style="background: var(--color-teal); color: black; border: none;">+ Add Event</button>
+                    <button type="button" class="btn-sm" data-action="add-event" style="background: var(--color-teal); color: black; border: none;">+ Add Event</button>
                 </div>
                 
                 <p style="color: #aaa; margin-bottom: 2rem;">Showcase your major performances to build credibility. These will appear in the 'Recent Works' section.</p>
@@ -334,7 +334,7 @@
                     </div>
                     <div style="text-align: right;">
                         <div style="color: #fff; margin-bottom: 0.5rem;">2023</div>
-                        <button class="btn-sm" style="border-color: #666; color: #ccc;">Edit</button>
+                        <button type="button" class="btn-sm" data-action="edit-item" style="border-color: #666; color: #ccc;">Edit</button>
                     </div>
                 </div>
 
@@ -346,7 +346,7 @@
                     </div>
                     <div style="text-align: right;">
                         <div style="color: #fff; margin-bottom: 0.5rem;">2022</div>
-                        <button class="btn-sm" style="border-color: #666; color: #ccc;">Edit</button>
+                        <button type="button" class="btn-sm" data-action="edit-item" style="border-color: #666; color: #ccc;">Edit</button>
                     </div>
                 </div>
             </div>
@@ -355,13 +355,13 @@
             <div id="testimonials" class="tab-content">
                 <div class="section-header">
                     <h2>Client Testimonials</h2>
-                    <button class="btn-sm" style="background: var(--color-teal); color: black; border: none;">+ Add Review</button>
+                    <button type="button" class="btn-sm" data-action="add-review" style="background: var(--color-teal); color: black; border: none;">+ Add Review</button>
                 </div>
                 
                 <div class="event-card" style="flex-direction: column; align-items: flex-start;">
                     <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 1rem;">
                         <div style="color: var(--color-gold);">★★★★★</div>
-                        <button class="btn-sm" style="border-color: #666; color: #ccc;">Edit</button>
+                        <button type="button" class="btn-sm" data-action="edit-item" style="border-color: #666; color: #ccc;">Edit</button>
                     </div>
                     <p style="font-style: italic; font-size: 1.1rem; margin-bottom: 1rem;">"Absolute riot! Had the entire crowd in splits for straight 90 minutes. Ultimate professional."</p>
                     <div>
@@ -412,7 +412,7 @@
                 <div class="grid-2">
                     <div class="form-group">
                         <label>Base Starting Price (₹)</label>
-                        <input type="number" class="form-control" value="500000">
+                        <input id="artistBasePrice" type="number" class="form-control" value="500000">
                     </div>
                     <div class="form-group">
                         <label>Willing to Travel?</label>
@@ -441,6 +441,47 @@
     <!-- Scripts for Interactivity -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const PROFILE_STORAGE_KEY = 'artistPublicProfile';
+
+            const readProfileDraft = () => {
+                try {
+                    const raw = localStorage.getItem(PROFILE_STORAGE_KEY);
+                    return raw ? JSON.parse(raw) : {};
+                } catch {
+                    return {};
+                }
+            };
+
+            const writeProfileDraft = (patch) => {
+                const current = readProfileDraft();
+                const next = { ...current, ...patch, updatedAt: new Date().toISOString() };
+                localStorage.setItem(PROFILE_STORAGE_KEY, JSON.stringify(next));
+                return next;
+            };
+
+            const applyProfileDraftToDashboard = (draft) => {
+                const setVal = (id, value) => {
+                    const el = document.getElementById(id);
+                    if (!el) return;
+                    if (value === undefined || value === null) return;
+                    el.value = String(value);
+                };
+
+                setVal('artistStageName', draft.stageName);
+                setVal('artistCategory', draft.category);
+                setVal('artistTagline', draft.tagline);
+                setVal('artistBio', draft.bio);
+                setVal('artistBaseCity', draft.baseCity);
+                setVal('artistExperience', draft.yearsExperience);
+                setVal('artistBasePrice', draft.basePrice);
+
+                // Sidebar preview
+                const sidebarName = document.querySelector('.sidebar h3');
+                const sidebarRole = document.querySelector('.sidebar p');
+                if (sidebarName && draft.stageName) sidebarName.textContent = String(draft.stageName);
+                if (sidebarRole && draft.category) sidebarRole.textContent = String(draft.category);
+            };
+
             // Tab Switching Logic
             const tabLinks = document.querySelectorAll('.tab-link');
             const tabContents = document.querySelectorAll('.tab-content');
@@ -549,6 +590,41 @@
             saveBtns.forEach(btn => {
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
+
+                    // Persist dashboard form data so profile.html can reflect updates
+                    const scope = this.closest('.tab-content');
+                    const scopeId = scope ? scope.id : '';
+
+                    if (scopeId === 'basic-info') {
+                        const stageName = document.getElementById('artistStageName')?.value?.trim();
+                        const category = document.getElementById('artistCategory')?.value?.trim();
+                        const tagline = document.getElementById('artistTagline')?.value?.trim();
+                        const bio = document.getElementById('artistBio')?.value?.trim();
+                        const baseCity = document.getElementById('artistBaseCity')?.value?.trim();
+                        const yearsExperienceRaw = document.getElementById('artistExperience')?.value;
+                        const yearsExperience = yearsExperienceRaw !== undefined && yearsExperienceRaw !== null && String(yearsExperienceRaw).trim() !== ''
+                            ? Number(yearsExperienceRaw)
+                            : undefined;
+
+                        writeProfileDraft({
+                            stageName,
+                            category,
+                            tagline,
+                            bio,
+                            baseCity,
+                            yearsExperience
+                        });
+                        applyProfileDraftToDashboard(readProfileDraft());
+                    }
+
+                    if (scopeId === 'settings') {
+                        const basePriceRaw = document.getElementById('artistBasePrice')?.value;
+                        const basePrice = basePriceRaw !== undefined && basePriceRaw !== null && String(basePriceRaw).trim() !== ''
+                            ? Number(basePriceRaw)
+                            : undefined;
+                        writeProfileDraft({ basePrice });
+                    }
+
                     const originalText = this.innerText;
                     this.innerText = 'Saving...';
                     this.style.opacity = '0.7';
@@ -568,45 +644,105 @@
                     }, 800);
                 });
             });
+
+            // Apply any previously saved values to the dashboard forms on load
+            applyProfileDraftToDashboard(readProfileDraft());
             
-            // Add/Remove Video Simulation
-            const addVideoBtn = document.querySelector('button[style*="Add Video"]');
-            if (addVideoBtn) {
-                addVideoBtn.addEventListener('click', (e) => {
+            // Generic action buttons simulation (Add / Remove / Edit)
+            // NOTE: querySelector cannot match by button text, so we delegate and switch on textContent.
+            const normalizeButtonText = (el) => (el?.textContent || '').replace(/\s+/g, ' ').trim();
+
+            const setInlineEditable = (el, enabled) => {
+                if (!el) return;
+                if (enabled) {
+                    el.setAttribute('contenteditable', 'true');
+                    el.setAttribute('spellcheck', 'false');
+                    el.style.cursor = 'text';
+                } else {
+                    el.removeAttribute('contenteditable');
+                    el.removeAttribute('spellcheck');
+                    el.style.cursor = '';
+                }
+            };
+
+            const toggleCardEditMode = (btn) => {
+                const card = btn.closest('.event-card');
+                if (!card) return;
+
+                const isEditing = card.getAttribute('data-editing') === 'true';
+                const nextEditing = !isEditing;
+
+                // Allow inline edits for text fields within the card.
+                const textTargets = Array.from(card.querySelectorAll('h3, h4, p'));
+
+                // If the element right before the button looks like a year, allow editing it too.
+                const maybeYear = btn.previousElementSibling;
+                if (maybeYear && /^\d{4}$/.test((maybeYear.textContent || '').trim())) {
+                    textTargets.push(maybeYear);
+                }
+
+                textTargets.forEach(el => setInlineEditable(el, nextEditing));
+
+                card.setAttribute('data-editing', String(nextEditing));
+                btn.textContent = nextEditing ? 'Save' : 'Edit';
+
+                // Optional persistence for edited card text (demo only)
+                if (!nextEditing) {
+                    try {
+                        const snapshot = {
+                            title: card.querySelector('h3, h4')?.textContent?.trim() || '',
+                            text: card.querySelector('p')?.textContent?.trim() || '',
+                            updatedAt: new Date().toISOString()
+                        };
+                        localStorage.setItem('artistDashboardLastEditedCard', JSON.stringify(snapshot));
+                    } catch {}
+                }
+            };
+
+            document.addEventListener('click', (e) => {
+                const btn = e.target.closest('button');
+                if (!btn) return;
+
+                const action = btn.getAttribute('data-action');
+                const label = normalizeButtonText(btn);
+
+                if (action === 'add-video' || label === 'Add Video') {
                     e.preventDefault();
-                    const input = addVideoBtn.previousElementSibling;
-                    if (input.value) {
-                        alert('Video link added: ' + input.value);
+                    const input = btn.previousElementSibling;
+                    const value = input && 'value' in input ? String(input.value).trim() : '';
+                    if (value) {
+                        alert('Video link added: ' + value);
                         input.value = '';
                     } else {
                         alert('Please enter a valid video URL first.');
                     }
-                });
-            }
+                    return;
+                }
 
-            // Generic action buttons (Events, Testimonials, Add)
-            const addEventBtn = document.querySelector('button[style*="+ Add Event"]');
-            if (addEventBtn) {
-                addEventBtn.addEventListener('click', () => alert('Add Event modal would open here.'));
-            }
+                if (action === 'add-event' || label === '+ Add Event') {
+                    e.preventDefault();
+                    alert('Add Event modal would open here.');
+                    return;
+                }
 
-            const addReviewBtn = document.querySelector('button[style*="+ Add Review"]');
-            if (addReviewBtn) {
-                addReviewBtn.addEventListener('click', () => alert('Add Review modal would open here.'));
-            }
+                if (action === 'add-review' || label === '+ Add Review') {
+                    e.preventDefault();
+                    alert('Add Review modal would open here.');
+                    return;
+                }
 
-            document.querySelectorAll('button[style*="Remove"]').forEach(btn => {
-                btn.addEventListener('click', function() {
+                if (action === 'remove-item' || label === 'Remove') {
+                    e.preventDefault();
                     if (confirm('Are you sure you want to remove this item?')) {
-                        this.closest('.event-card').remove();
+                        btn.closest('.event-card')?.remove();
                     }
-                });
-            });
+                    return;
+                }
 
-            document.querySelectorAll('button[style*="Edit"]').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    alert('Edit mode activated for this item.');
-                });
+                if (action === 'edit-item' || label === 'Edit' || label === 'Save') {
+                    e.preventDefault();
+                    toggleCardEditMode(btn);
+                }
             });
         });
 
