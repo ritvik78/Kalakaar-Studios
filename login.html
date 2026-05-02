@@ -11,28 +11,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
     <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/style.css">
     
     <style>
+        body {
+            background-color: var(--color-bg-dark);
+            color: var(--color-white);
+        }
         .login-container {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--color-bg-dark) 0%, rgba(0, 0, 0, 0.9) 100%);
+            background: linear-gradient(135deg, var(--color-bg-dark) 0%, rgba(128, 128, 128, 0.1) 100%);
             padding: 2rem;
             position: relative;
         }
 
         .login-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--color-charcoal);
+            border: 1px solid rgba(128, 128, 128, 0.2);
             backdrop-filter: blur(20px);
             padding: 3rem;
             border-radius: 20px;
             width: 100%;
             max-width: 450px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
             text-align: center;
             z-index: 2;
         }
@@ -45,17 +51,18 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: #eee;
+            color: var(--color-white);
+            opacity: 0.9;
             font-size: 0.9rem;
         }
 
         .form-control {
             width: 100%;
             padding: 1rem;
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(128, 128, 128, 0.1);
+            border: 1px solid rgba(128, 128, 128, 0.2);
             border-radius: 8px;
-            color: white;
+            color: var(--color-white);
             font-family: inherit;
         }
 
@@ -67,7 +74,7 @@
         .btn-login {
             width: 100%;
             background: var(--grad-accent);
-            color: black;
+            color: #000;
             border: none;
             padding: 1rem;
             font-weight: 600;
@@ -119,17 +126,17 @@
                 </div>
                 
                 <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 2rem;">
-                    <label style="display: flex; align-items: center; gap: 0.5rem; color: #ccc; cursor: pointer;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-white); opacity: 0.8; cursor: pointer;">
                         <input type="checkbox"> Remember me
                     </label>
                     <a href="#" style="color: var(--color-teal); text-decoration: none;">Forgot Password?</a>
                 </div>
 
                 <button type="submit" class="btn-login ripple-effect">Sign In</button>
-                <button type="button" class="btn-login ripple-effect" id="skipLoginBtn" style="background: transparent; border: 1px solid var(--color-teal); color: white; margin-top: 10px;">Skip Login (Continue as Guest)</button>
+                <button type="button" class="btn-login ripple-effect" id="skipLoginBtn" style="background: transparent; border: 1px solid var(--color-teal); color: var(--color-white); margin-top: 10px;">Skip Login (Continue as Guest)</button>
             </form>
             
-            <p style="margin-top: 2rem; font-size: 0.9rem; color: #aaa;">Don't have an account? <span style="color: white; font-weight: 600; cursor: pointer;">Contact Admin to register.</span></p>
+            <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--color-white); opacity: 0.7;">Don't have an account? <span style="color: var(--color-white); font-weight: 600; cursor: pointer; opacity: 1;">Contact Admin to register.</span></p>
         </div>
     </div>
 

@@ -26,9 +26,15 @@
     </script>
     
     <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
     <style>
+        body {
+            background-color: var(--color-bg-dark);
+            color: var(--color-white);
+        }
         .dashboard-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -39,10 +45,10 @@
         }
 
         .sidebar {
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--color-charcoal);
             border-radius: 12px;
             padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(128, 128, 128, 0.2);
             height: fit-content;
         }
 
@@ -57,27 +63,29 @@
         }
 
         .sidebar-menu a {
-            color: #ccc;
+            color: var(--color-white);
             text-decoration: none;
             font-size: 1.1rem;
             display: block;
             padding: 0.5rem 1rem;
             border-radius: 8px;
             transition: all 0.3s ease;
+            opacity: 0.8;
         }
 
         .sidebar-menu a:hover,
         .sidebar-menu a.active {
-            background: var(--color-teal);
+            background: var(--grad-accent);
             color: var(--color-black);
             font-weight: 600;
+            opacity: 1;
         }
 
         .content-area {
-            background: rgba(255, 255, 255, 0.02);
+            background: var(--color-charcoal);
             border-radius: 12px;
             padding: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(128, 128, 128, 0.2);
         }
 
         .form-group {
@@ -87,17 +95,18 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: #eee;
+            color: var(--color-white);
             font-weight: 600;
+            opacity: 0.9;
         }
 
         .form-control {
             width: 100%;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(128, 128, 128, 0.1);
+            border: 1px solid rgba(128, 128, 128, 0.2);
             border-radius: 8px;
-            color: white;
+            color: var(--color-white);
             font-family: inherit;
         }
 
