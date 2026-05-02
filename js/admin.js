@@ -1,8 +1,8 @@
 // Mock Data for Admin Dashboard - Persist in LocalStorage
 let mockArtists = JSON.parse(localStorage.getItem('mockArtists')) || [
-    { id: 1, name: "DJ Spark", email: "spark@example.com", status: "Active", price: "$500", dates: "Oct 12, Oct 15" },
-    { id: 2, name: "The Rockers", email: "rockers@example.com", status: "Inactive", price: "$1200", dates: "Nov 01" },
-    { id: 3, name: "Elena Vocals", email: "elena@example.com", status: "Active", price: "$800", dates: "Oct 20, Nov 05" }
+    { id: 1, name: "DJ Spark", email: "spark@example.com", status: "Active", price: "₹50000", dates: "Oct 12, Oct 15" },
+    { id: 2, name: "The Rockers", email: "rockers@example.com", status: "Inactive", price: "₹120000", dates: "Nov 01" },
+    { id: 3, name: "Elena Vocals", email: "elena@example.com", status: "Active", price: "₹80000", dates: "Oct 20, Nov 05" }
 ];
 
 const mockLogins = [
