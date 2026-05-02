@@ -13,7 +13,7 @@ const mockLogins = [
 
 // Check Authorization (Mocking Role Based Access)
 function checkAuth() {
-    const role = localStorage.getItem('userRole'); // 'admin', 'artist', 'visitor'
+    const role = sessionStorage.getItem('userRole'); // 'admin', 'artist', 'visitor'
     if (role !== 'admin') {
         alert('Access Denied. You do not have admin privileges.');
         window.location.href = 'index.html';
@@ -92,10 +92,7 @@ function saveShowData(id) {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    // For demo purposes, we automatically set the role to admin when on this page
-    // In a real app, this is determined during login
-    localStorage.setItem('userRole', 'admin'); 
-    
+    // Rely on session logic from auth.js instead of forcing admin
     checkAuth();
     renderAdminDashboard();
 });

@@ -1,9 +1,18 @@
 // Authentication & Role Access Management
+
+// Redirect to login if no role is set and we're not already on the login page
+const currentPath = window.location.pathname;
+const isLoginPage = currentPath.endsWith('login.html');
+let role = sessionStorage.getItem('userRole');
+
+if (!role && !isLoginPage) {
+    window.location.href = 'login.html';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Mock user roles checking for generic pages
-    const role = localStorage.getItem('userRole') || 'visitor';
-    
     // Hide/Show Admin links based on role
+    role = sessionStorage.getItem('userRole') || 'visitor';
+
     const adminLinks = document.querySelectorAll('.admin-only');
     const artistLinks = document.querySelectorAll('.artist-only');
     
@@ -22,11 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
             form.innerHTML = '<p>You do not have permission to edit this profile.</p>';
         }
     });
+
+    // Log out functionality
+    const logoutBtns = document.querySelectorAll('.logout-btn');
+    logoutBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            sessionStorage.removeItem('userRole');
+            sessionStorage.removeItem('artistEmail');
+            window.location.href = 'login.html';
+        });
+    });
 });
 
 // Function to simulate login
 function simulateLogin(selectedRole) {
-    localStorage.setItem('userRole', selectedRole);
+    sessionStorage.setItem('userRole', selectedRole);
     alert(`Logged in as ${selectedRole}`);
     if(selectedRole === 'admin') window.location.href = 'admin-dashboard.html';
     else if(selectedRole === 'artist') window.location.href = 'artist-dashboard.html';

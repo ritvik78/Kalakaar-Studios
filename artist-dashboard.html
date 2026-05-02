@@ -15,11 +15,13 @@
     <script>
         // Restrict access to artist and admin only
         document.addEventListener('DOMContentLoaded', () => {
-            const role = localStorage.getItem('userRole') || 'visitor';
+            const role = sessionStorage.getItem('userRole') || 'visitor';
             if (role !== 'artist' && role !== 'admin') {
                 alert('Access Denied. Only authorized artists or admins can view this page.');
                 window.location.href = 'index.html';
             }
+            
+            // Allow logging out using the generic logic if needed
         });
     </script>
     
