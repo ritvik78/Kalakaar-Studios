@@ -17,12 +17,11 @@ function saveToLocalStorage() {
 
 // Check Authorization (Mocking Role Based Access)
 function checkAuth() {
-    // Auth removed per user request
-    // const role = sessionStorage.getItem('userRole'); // 'admin', 'artist', 'visitor'
-    // if (role !== 'admin') {
-    //     alert('Access Denied. You do not have admin privileges.');
-    //     window.location.href = 'index.html';
-    // }
+    const role = sessionStorage.getItem('userRole'); // 'admin', 'artist', 'visitor'
+    if (role !== 'admin') {
+        alert('Access Denied. You do not have admin privileges.');
+        window.location.href = 'index.html';
+    }
 }
 
 // Render Tables

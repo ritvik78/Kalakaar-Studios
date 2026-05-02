@@ -232,6 +232,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Handle Profile Routing Globally
 window.handleProfileClick = function() {
-  // Login requirement removed per user request
-  window.location.href = 'artist-dashboard.html';
+  const isLoggedIn = localStorage.getItem('isArtistLoggedIn');
+  if (isLoggedIn === 'true') {
+      window.location.href = 'artist-dashboard.html';
+  } else {
+      alert('Welcome to Kalakaar Studios! Please Login or Sign In to manage your artist profile.');
+      window.location.href = 'login.html';
+  }
 };
