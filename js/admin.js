@@ -1,5 +1,5 @@
-// Mock Data for Admin Dashboard
-const mockArtists = [
+// Mock Data for Admin Dashboard - Persist in LocalStorage
+let mockArtists = JSON.parse(localStorage.getItem('mockArtists')) || [
     { id: 1, name: "DJ Spark", email: "spark@example.com", status: "Active", price: "$500", dates: "Oct 12, Oct 15" },
     { id: 2, name: "The Rockers", email: "rockers@example.com", status: "Inactive", price: "$1200", dates: "Nov 01" },
     { id: 3, name: "Elena Vocals", email: "elena@example.com", status: "Active", price: "$800", dates: "Oct 20, Nov 05" }
@@ -10,6 +10,10 @@ const mockLogins = [
     { user: "The Rockers", ip: "192.168.1.4", time: "2026-05-01 09:15 PM", status: "Failed" },
     { user: "Elena Vocals", ip: "10.0.0.5", time: "2026-05-02 08:45 AM", status: "Success" }
 ];
+
+function saveToLocalStorage() {
+    localStorage.setItem('mockArtists', JSON.stringify(mockArtists));
+}
 
 // Check Authorization (Mocking Role Based Access)
 function checkAuth() {
@@ -70,6 +74,7 @@ function editProfile(id) {
         if (newName && newEmail) {
             artist.name = newName;
             artist.email = newEmail;
+            saveToLocalStorage();
             renderAdminDashboard();
             alert('Profile updated successfully!');
         }
@@ -80,6 +85,7 @@ function toggleStatus(id) {
     const artist = mockArtists.find(a => a.id === id);
     if(artist) {
         artist.status = artist.status === 'Active' ? 'Inactive' : 'Active';
+        saveToLocalStorage();
         renderAdminDashboard();
     }
 }
@@ -87,6 +93,12 @@ function toggleStatus(id) {
 function saveShowData(id) {
     const price = document.getElementById(`price-${id}`).value;
     const dates = document.getElementById(`dates-${id}`).value;
+    const artist = mockArtists.find(a => a.id === id);
+    if(artist) {
+        artist.price = price;
+        artist.dates = dates;
+        saveToLocalStorage();
+    }
     alert(`Saved details for Artist ID: ${id}\nNew Price: ${price}\nNew Dates: ${dates}`);
 }
 

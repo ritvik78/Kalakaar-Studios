@@ -57,10 +57,32 @@
             align-items: center;
             margin-bottom: 2rem;
         }
+
+        /* Ambient Glowing Background Elements to Match Main Site */
+        .ambient-shape {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .shape-1 { width: 500px; height: 500px; top: -100px; left: -100px; background: var(--grad-purple-dream); }
+        .shape-2 { width: 400px; height: 400px; bottom: -50px; right: -50px; background: var(--grad-ocean-wave); }
+        .shape-3 { width: 300px; height: 300px; top: 40%; left: 30%; background: var(--grad-sunset-blaze); opacity: 0.1; }
+        
+        .admin-main, .admin-sidebar, .admin-card {
+            position: relative;
+            z-index: 1;
+        }
         
     </style>
 </head>
 <body>
+    <div class="ambient-shape shape-1"></div>
+    <div class="ambient-shape shape-2"></div>
+    <div class="ambient-shape shape-3"></div>
+
     <div class="admin-container">
         <aside class="admin-sidebar">
             <h2>Admin Panel</h2>
