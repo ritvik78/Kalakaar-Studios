@@ -5,9 +5,9 @@ const currentPath = window.location.pathname;
 const isLoginPage = currentPath.endsWith('login.html');
 let role = sessionStorage.getItem('userRole');
 
-if (!role && !isLoginPage) {
-    window.location.href = 'login.html';
-}
+// if (!role && !isLoginPage) {
+//     window.location.href = 'login.html';
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
     // Hide/Show Admin links based on role

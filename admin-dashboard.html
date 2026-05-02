@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,48 +10,94 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/utilities.css">
     <style>
+        body {
+            background-color: var(--color-bg-dark);
+            color: var(--color-white);
+        }
+
         .admin-container {
             display: grid;
             grid-template-columns: 250px 1fr;
             min-height: 100vh;
-            background-color: var(--color-bg-dark);
+            background-color: transparent;
             color: var(--color-white);
         }
+
         .admin-sidebar {
             background-color: var(--color-charcoal);
             padding: 2rem;
-            border-right: 1px solid rgba(128, 128, 128, 0.2);
+            border-right: 1px solid rgba(var(--color-white-rgb), 0.2);
         }
-        .admin-sidebar h2 { margin-bottom: 2rem; }
+
+        .admin-sidebar h2 {
+            margin-bottom: 2rem;
+        }
+
         .admin-nav a {
             display: block;
             color: var(--color-white);
             opacity: 0.8;
             text-decoration: none;
             padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+            border-bottom: 1px solid rgba(var(--color-white-rgb), 0.2);
             transition: opacity 0.3s;
         }
-        .admin-nav a:hover { opacity: 1; color: var(--color-teal); }
+
+        .admin-nav a:hover {
+            opacity: 1;
+            color: var(--color-teal);
+        }
+
         .admin-main {
             padding: 2rem;
-            background-color: var(--color-bg-dark);
+            background-color: transparent;
         }
+
         .admin-card {
             background: var(--color-charcoal);
             padding: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 2rem;
-            border: 1px solid rgba(128, 128, 128, 0.1);
+            border: 1px solid rgba(var(--color-white-rgb), 0.1);
         }
-        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid rgba(128, 128, 128, 0.2); }
-        th { background-color: rgba(128, 128, 128, 0.1); }
-        .btn { padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; font-family: inherit; font-weight: bold; }
-        .btn-edit { background: var(--grad-accent); color: #000; }
-        .btn-danger { background: #f44336; color: white; }
-        
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(var(--color-white-rgb), 0.2);
+        }
+
+        th {
+            background-color: rgba(var(--color-white-rgb), 0.1);
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+        }
+
+        .btn-edit {
+            background: var(--grad-accent);
+            color: var(--color-black);
+        }
+
+        .btn-danger {
+            background: #f44336;
+            color: white;
+        }
+
         .admin-header-actions {
             display: flex;
             justify-content: space-between;
@@ -58,26 +105,15 @@
             margin-bottom: 2rem;
         }
 
-        /* Ambient Glowing Background Elements to Match Main Site */
-        .ambient-shape {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.15;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .shape-1 { width: 500px; height: 500px; top: -100px; left: -100px; background: var(--grad-purple-dream); }
-        .shape-2 { width: 400px; height: 400px; bottom: -50px; right: -50px; background: var(--grad-ocean-wave); }
-        .shape-3 { width: 300px; height: 300px; top: 40%; left: 30%; background: var(--grad-sunset-blaze); opacity: 0.1; }
-        
-        .admin-main, .admin-sidebar, .admin-card {
+        .admin-main,
+        .admin-sidebar,
+        .admin-card {
             position: relative;
             z-index: 1;
         }
-        
     </style>
 </head>
+
 <body>
     <div class="ambient-shape shape-1"></div>
     <div class="ambient-shape shape-2"></div>
@@ -93,7 +129,7 @@
                 <a href="index.html">Back to Home</a>
             </nav>
         </aside>
-        
+
         <main class="admin-main">
             <header class="admin-header-actions">
                 <div>
@@ -101,13 +137,28 @@
                     <p>Manage artist profiles, prices, show dates, and monitor login history.</p>
                 </div>
                 <div>
-                    <button class="theme-switch" id="themeToggle" aria-label="Toggle Theme" style="position: relative; top: 0; right: 0;">
+                    <button class="theme-switch" id="themeToggle" aria-label="Toggle Theme"
+                        style="position: relative; top: 0; right: 0;">
                         <div class="switch-track">
                             <div class="switch-icon icon-sun">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
                             </div>
                             <div class="switch-icon icon-moon">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
                             </div>
                             <div class="switch-thumb"></div>
                         </div>
@@ -171,4 +222,5 @@
     <script src="js/admin.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

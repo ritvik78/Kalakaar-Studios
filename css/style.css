@@ -728,3 +728,70 @@
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
+
+/* --- Ambient Glowing Background Elements --- */
+.ambient-shape {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+.shape-1 { width: 500px; height: 500px; top: -100px; left: -100px; background: var(--grad-purple-dream); }
+.shape-2 { width: 400px; height: 400px; bottom: -50px; right: -50px; background: var(--grad-ocean-wave); }
+.shape-3 { width: 300px; height: 300px; top: 40%; left: 30%; background: var(--grad-sunset-blaze); opacity: 0.1; }
+
+[data-theme="light"] .ambient-shape {
+  opacity: 0.25; /* slightly more visible in light mode */
+}
+
+/* --- Global Light Mode Overrides for Hardcoded Inline Styles --- */
+[data-theme="light"] .category-overlay h3.category-title {
+  color: var(--color-black) !important;
+}
+[data-theme="light"] .category-overlay p {
+  color: var(--color-text-muted) !important;
+}
+[data-theme="light"] .testimonial-swiper .swiper-slide > div {
+  background: rgba(var(--color-black-rgb), 0.05) !important;
+  border-color: rgba(var(--color-black-rgb), 0.1) !important;
+}
+[data-theme="light"] .testimonial-swiper h4,
+[data-theme="light"] .testimonial-swiper p {
+  color: var(--color-black) !important;
+}
+[data-theme="light"] #why-us > div > div > div {
+  background: rgba(var(--color-black-rgb), 0.05) !important;
+  border-color: rgba(var(--color-black-rgb), 0.1) !important;
+}
+[data-theme="light"] #why-us h3,
+[data-theme="light"] #why-us p,
+[data-theme="light"] #booking h2 + p {
+  color: var(--color-black) !important;
+}
+[data-theme="light"] #booking > div > div {
+  background: var(--color-bg-light) !important;
+  border-color: rgba(var(--color-black-rgb), 0.1) !important;
+}
+[data-theme="light"] .timeline-content h3, 
+[data-theme="light"] .timeline-content p {
+  color: var(--color-black) !important;
+}
+[data-theme="light"] .wizard-radio-card, 
+[data-theme="light"] .wizard-checkbox-card {
+  color: var(--color-black) !important;
+}
+[data-theme="light"] .form-group label {
+  color: var(--color-black) !important;
+}
+[data-theme="light"] input.form-control,
+[data-theme="light"] select.form-control,
+[data-theme="light"] textarea.form-control {
+  background: rgba(var(--color-black-rgb), 0.05) !important;
+  border-color: rgba(var(--color-black-rgb), 0.2) !important;
+  color: var(--color-black) !important;
+}
+[data-theme="light"] .header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
