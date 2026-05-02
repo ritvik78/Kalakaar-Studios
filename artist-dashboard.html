@@ -10,6 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
+    <!-- Auth & Logic Script -->
+    <script src="js/auth.js"></script>
+    <script>
+        // Restrict access to artist and admin only
+        document.addEventListener('DOMContentLoaded', () => {
+            const role = localStorage.getItem('userRole') || 'visitor';
+            if (role !== 'artist' && role !== 'admin') {
+                alert('Access Denied. Only authorized artists or admins can view this page.');
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+    
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
