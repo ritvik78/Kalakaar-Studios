@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Artist | Kalakaar Studios</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- Navigation Header -->
+    <header class="header scrolled" id="header" style="background-color: rgba(0,0,0,0.85); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Kalakaar<span>Studios</span></a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="category.html" class="nav-link">🎭 Talent Categories</a>
+                    </li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">📸 Gallery</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">📝 Blog</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">🏢 About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">📞 Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-switch" id="themeToggle" aria-label="Toggle Theme">
+                    <div class="switch-track">
+                        <span class="switch-icon sun-icon">☀️</span>
+                        <span class="switch-icon moon-icon">🌙</span>
+                        <div class="switch-thumb"></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 15vh; min-height: 80vh;">
+        <div class="container" style="max-width: 800px; margin: auto;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Book <span id="artistNameDisplay" style="color: var(--color-gold);">an Artist</span></h1>
+                <p style="color: #bbb; font-size: 1.1rem;">Fill out the form below to initiate the booking process. Our team will get back to you shortly.</p>
+            </div>
+
+            <form style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="name" style="display: block; margin-bottom: 0.5rem; color: #eee;">Full Name</label>
+                    <input type="text" id="name" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="phone" style="display: block; margin-bottom: 0.5rem; color: #eee;">Phone Number</label>
+                    <input type="tel" id="phone" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="email" style="display: block; margin-bottom: 0.5rem; color: #eee;">Email Address</label>
+                    <input type="email" id="email" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
+                </div>
+                 
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="city" style="display: block; margin-bottom: 0.5rem; color: #eee;">City</label>
+                    <input type="text" id="city" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="budget" style="display: block; margin-bottom: 0.5rem; color: #eee;">Estimated Budget</label>
+                    
+                    <div class="grid" style="grid-template-columns: 1fr; gap: 1rem;">
+                                <select name="budget" class="wizard-input">
+                                    <option value="" disabled selected>Select a range</option>
+                                    <option value="Under 1 Lakh">Under ₹1,00,000</option>
+                                    <option value="1L - 5L">₹1,00,000 - ₹5,00,000</option>
+                                    <option value="5L - 10L">₹5,00,000 - ₹10,00,000</option>
+                                    <option value="10L+">₹10,00,000+</option>
+                                    <option value="Undecided">Undecided / Flexible</option>
+                                </select>
+                            </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="eventType" style="display: block; margin-bottom: 0.5rem; color: #eee;">Event Type</label>
+                    <select id="eventType" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
+                        <option value="corporate">Corporate Event</option>
+                        <option value="college">College Festival</option>
+                        <option value="private">Private Party</option>
+                        <option value="wedding">Wedding / Sangeet</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="eventDate" style="display: block; margin-bottom: 0.5rem; color: #eee;">Event Date</label>
+                    <input type="date" id="eventDate" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
+                </div>
+
+                <div class="form-group" style="margin-bottom: 2rem;">
+                    <label for="message" style="display: block; margin-bottom: 0.5rem; color: #eee;">Event Details</label>
+                    <textarea id="message" rows="5" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem; resize: vertical;"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary ripple-effect" style="width: 100%; font-size: 1.1rem; padding: 1rem;">Submit Booking Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 2rem; background: var(--color-bg-dark); color: #888; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p>&copy; 2026 Kalakaar Studios. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Extract artist from URL and display
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const artist = urlParams.get('artist');
+            if (artist) {
+                // Formatting name (e.g., 'zakir' to 'Zakir')
+                const formattedName = artist.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                document.getElementById('artistNameDisplay').textContent = formattedName;
+                document.title = `Book ${formattedName} | Kalakaar Studios`;
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
