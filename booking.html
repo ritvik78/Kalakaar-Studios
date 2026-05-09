@@ -100,26 +100,31 @@
                     </select>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-                    <div class="form-group">
-                        <label for="eventDate" style="display: block; margin-bottom: 0.5rem; color: #eee;">Start Date</label>
-                        <input type="date" id="eventDate" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
-                    </div>
-                    <div class="form-group">
-                        <label for="eventEndDate" style="display: block; margin-bottom: 0.5rem; color: #eee;">End Date</label>
-                        <input type="date" id="eventEndDate" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
-                    </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="eventDate" style="display: block; margin-bottom: 0.5rem; color: #eee;">Event Date</label>
+                    <input type="date" id="eventDate" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
                 </div>
 
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="eventDuration" style="display: block; margin-bottom: 0.5rem; color: #eee;">Duration per Day</label>
-                    <select id="eventDuration" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
-                        <option value="" disabled selected>Select duration</option>
-                        <option value="1">1 Hour</option>
-                        <option value="2">2-3 Hours</option>
-                        <option value="4">Half Day</option>
-                        <option value="8">Full Day Function</option>
-                    </select>
+                <div class="form-group" style="margin-bottom: 1.5rem; background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                    <label style="display: block; margin-bottom: 1rem; color: var(--color-gold); font-size: 1.1rem; font-weight: bold;">Booking Duration Details</label>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <label for="eventDuration" style="display: block; margin-bottom: 0.5rem; color: #eee;">Duration Required</label>
+                            <select id="eventDuration" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
+                                <option value="" disabled selected>Select duration</option>
+                                <option value="hourly">Few Hours</option>
+                                <option value="half_day">Half Day</option>
+                                <option value="full_day">Full Day</option>
+                                <option value="multi_day">Multiple Days</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="specificDates" style="display: block; margin-bottom: 0.5rem; color: #eee;">Select Specific Booking Dates</label>
+                            <input type="date" id="specificDates" style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
+                            <small style="color: #888; font-size: 0.8rem; display: block; margin-top: 0.5rem;">Use this calendar to pick the exact days.</small>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group" style="margin-bottom: 2rem;">
