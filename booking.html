@@ -10,6 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
+    <!-- Flatpickr for multiple date selection -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
@@ -121,7 +125,7 @@
                         </div>
                         <div>
                             <label for="specificDates" style="display: block; margin-bottom: 0.5rem; color: #eee;">Select Specific Booking Dates</label>
-                            <input type="date" id="specificDates" style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
+                            <input type="text" id="specificDates" placeholder="Select one or multiple dates..." style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem; cursor: pointer;">
                             <small style="color: #888; font-size: 0.8rem; display: block; margin-top: 0.5rem;">Use this calendar to pick the exact days.</small>
                         </div>
                     </div>
@@ -142,7 +146,19 @@
         <p>&copy; 2026 Kalakaar Studios. All rights reserved.</p>
     </footer>
 
+    <!-- Flatpickr Script -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
+        // Initialize Flatpickr for multiple date selection
+        document.addEventListener('DOMContentLoaded', function() {
+            flatpickr("#specificDates", {
+                mode: "multiple",
+                dateFormat: "Y-m-d",
+                minDate: "today",
+                placeholder: "Click to select multiple dates"
+            });
+        });
+
         // Extract artist from URL and display
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
