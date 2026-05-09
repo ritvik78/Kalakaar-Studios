@@ -18,36 +18,36 @@
   --color-teal: #00E5CC;
   --color-purple: #9D4EDD;
   --color-pink: #FF006E;
-  --color-blue: #00B4D8;
+  --color-blue: #9D4EDD; /* Changed to purple shade */
   --color-lime: #06FFA5;
 
   /* Semantic Colors */
   --color-success: #06FFA5;
   --color-warning: #FFB800;
   --color-error: #FF006E;
-  --color-info: #00B4D8;
+  --color-info: #9D4EDD; /* Changed to purple shade */
 
   /* Gradients (12 Variations) */
   --grad-purple-dream: linear-gradient(135deg, #9D4EDD 0%, #FF006E 100%);
-  --grad-ocean-wave: linear-gradient(135deg, #00B4D8 0%, #00E5CC 100%);
+  --grad-ocean-wave: linear-gradient(135deg, #4A00E0 0%, #9D4EDD 100%);
   --grad-sunset-blaze: linear-gradient(135deg, #FF006E 0%, #FFB800 100%);
   --grad-night-sky: linear-gradient(180deg, #0A0A0A 0%, #2D2D2D 100%);
   --grad-gold-rush: linear-gradient(90deg, #D4AF37 0%, #FFB800 100%);
   --grad-cosmic-purple: linear-gradient(135deg, #4A00E0 0%, #9D4EDD 100%);
-  --grad-arctic-blue: linear-gradient(135deg, #00E5CC 0%, #06FFA5 100%);
+  --grad-arctic-blue: linear-gradient(135deg, #9D4EDD 0%, #4A00E0 100%);
   --grad-rose-gold: linear-gradient(135deg, #FFB800 0%, #FF006E 50%, #9D4EDD 100%);
   --grad-dark-elegance: linear-gradient(135deg, #0A0A0A 0%, #9D4EDD 100%);
-  --grad-electric-storm: linear-gradient(135deg, #00B4D8 0%, #9D4EDD 50%, #FF006E 100%);
+  --grad-electric-storm: linear-gradient(135deg, #4A00E0 0%, #9D4EDD 50%, #FF006E 100%);
   --grad-golden-hour: linear-gradient(90deg, #D4AF37 0%, #FFB800 50%, #FF006E 100%);
-  --grad-deep-ocean: linear-gradient(180deg, #00B4D8 0%, #0A0A0A 100%);
+  --grad-deep-ocean: linear-gradient(180deg, #4A00E0 0%, #0A0A0A 100%);
 
   /* Backward Compatibility with old styles */
   --color-primary: var(--color-black);
   --color-bg-dark: var(--color-black);
   --color-bg-light: var(--color-gray);
   --color-accent-gold: var(--color-gold);
-  --grad-hover: var(--grad-purple-dream);
-  --grad-accent: var(--grad-ocean-wave);
+  --grad-hover: var(--grad-cosmic-purple);
+  --grad-accent: var(--grad-purple-dream);
   --grad-overlay: linear-gradient(to top, rgba(10,10,10,0.9), transparent);
 
   /* Typography System */
