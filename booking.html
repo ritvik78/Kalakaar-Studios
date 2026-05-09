@@ -100,9 +100,26 @@
                     </select>
                 </div>
 
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div class="form-group">
+                        <label for="eventDate" style="display: block; margin-bottom: 0.5rem; color: #eee;">Start Date</label>
+                        <input type="date" id="eventDate" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
+                    </div>
+                    <div class="form-group">
+                        <label for="eventEndDate" style="display: block; margin-bottom: 0.5rem; color: #eee;">End Date</label>
+                        <input type="date" id="eventEndDate" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
+                    </div>
+                </div>
+
                 <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="eventDate" style="display: block; margin-bottom: 0.5rem; color: #eee;">Event Date</label>
-                    <input type="date" id="eventDate" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
+                    <label for="eventDuration" style="display: block; margin-bottom: 0.5rem; color: #eee;">Duration per Day</label>
+                    <select id="eventDuration" required style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #fff; font-size: 1rem;">
+                        <option value="" disabled selected>Select duration</option>
+                        <option value="1">1 Hour</option>
+                        <option value="2">2-3 Hours</option>
+                        <option value="4">Half Day</option>
+                        <option value="8">Full Day Function</option>
+                    </select>
                 </div>
 
                 <div class="form-group" style="margin-bottom: 2rem;">
