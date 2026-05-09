@@ -23,7 +23,7 @@
 .btn-primary {
   background: var(--color-primary);
   color: var(--color-white);
-  border: 1px solid var(--color-teal);
+  border: 1px solid var(--color-purple);
   box-shadow: 0 0 15px rgba(157, 78, 221, 0.2);
 }
 
@@ -79,7 +79,7 @@
 }
 
 .btn-text:hover {
-  color: var(--color-teal);
+  color: var(--color-purple);
 }
 
 .btn-sm {
@@ -95,8 +95,8 @@
 }
 
 .btn-sm:hover {
-  background: var(--color-teal);
-  border-color: var(--color-teal);
+  background: var(--color-purple);
+  border-color: var(--color-purple);
   color: var(--color-black);
 }
 
@@ -112,7 +112,7 @@
 }
 
 .badge-primary {
-  background: var(--color-teal);
+  background: var(--color-purple);
   color: var(--color-black);
 }
 

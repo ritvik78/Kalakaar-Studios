@@ -161,7 +161,7 @@
 }
 
 .action-icon:hover {
-  color: var(--color-teal);
+  color: var(--color-purple);
   transform: scale(1.1);
 }
 
@@ -289,7 +289,7 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,206,209,0.3));
+  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(157, 78, 221,0.3));
   z-index: -1;
   transition: background var(--trans-slow);
 }
@@ -352,7 +352,7 @@
 .stat-item:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-  border-color: rgba(0, 206, 209, 0.3);
+  border-color: rgba(157, 78, 221, 0.3);
 }
 
 .stat-number {
@@ -458,8 +458,8 @@
 }
 
 .btn-sm:hover {
-  background: var(--color-teal);
-  border-color: var(--color-teal);
+  background: var(--color-purple);
+  border-color: var(--color-purple);
 }
 
 /* --- Responsive Breakpoints --- */
@@ -505,7 +505,7 @@
 }
 [data-theme="light"] .dropdown-item:hover {
   background-color: rgba(0,0,0,0.05);
-  color: var(--color-teal);
+  color: var(--color-purple);
 }
 [data-theme="light"] .nav-link,
 [data-theme="light"] .logo,
@@ -516,7 +516,7 @@
   background-color: #000;
 }
 [data-theme="light"] .hero-overlay {
-  background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(0,206,209,0.3));
+  background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(157, 78, 221,0.3));
 }
 [data-theme="light"] .hero-title,
 [data-theme="light"] .hero-subtitle {
@@ -587,7 +587,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background: var(--color-teal);
+  background: var(--color-purple);
   opacity: 1;
 }
 
@@ -631,8 +631,8 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--color-teal);
-  box-shadow: 0 0 10px var(--color-teal);
+  background: var(--color-purple);
+  box-shadow: 0 0 10px var(--color-purple);
   z-index: 2;
 }
 
@@ -707,7 +707,7 @@
   transition: border-color 0.3s;
 }
 .wizard-input:focus {
-  border-color: var(--color-teal);
+  border-color: var(--color-purple);
 }
 .wizard-radio-card, .wizard-checkbox-card {
   display: block;
@@ -724,7 +724,7 @@
 .wizard-radio-card.selected .radio-card-content,
 .wizard-checkbox-card.selected .checkbox-card-content {
   background: rgba(157, 78, 221, 0.1);
-  border-color: var(--color-teal);
+  border-color: var(--color-purple);
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }

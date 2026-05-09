@@ -114,7 +114,7 @@
 
         .form-control:focus {
             outline: none;
-            border-color: var(--color-teal);
+            border-color: var(--color-purple);
         }
 
         textarea.form-control {
@@ -139,7 +139,7 @@
         }
 
         .media-upload-area:hover {
-            border-color: var(--color-teal);
+            border-color: var(--color-purple);
             background: rgba(157, 78, 221, 0.05);
         }
 
@@ -218,7 +218,7 @@
                     <span style="font-weight: 600;">My Dashboard</span>
                 </div>
                 <button class="btn-sm"
-                    style="background: transparent; border: 1px solid var(--color-teal); color: var(--color-teal);"
+                    style="background: transparent; border: 1px solid var(--color-purple); color: var(--color-purple);"
                     onclick="logout()">Logout</button>
             </div>
         </div>
@@ -242,14 +242,14 @@
                     <img id="sidebarProfilePic"
                         src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=200&auto=format&fit=crop"
                         alt="Profile Image"
-                        style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-teal); transition: opacity 0.3s;">
+                        style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-purple); transition: opacity 0.3s;">
                     <label for="profilePicInput"
                         style="position: absolute; inset: 0; background: rgba(0,0,0,0.6); color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; opacity: 0; cursor: pointer; transition: opacity 0.3s; font-size: 0.9rem;"
                         onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">Change</label>
                     <input type="file" id="profilePicInput" accept="image/*" style="display: none;">
                 </div>
                 <h3 style="margin-bottom: 0.2rem;">Zakir Khan</h3>
-                <p style="color: var(--color-teal); font-size: 0.9rem;">Stand-up Comedian</p>
+                <p style="color: var(--color-purple); font-size: 0.9rem;">Stand-up Comedian</p>
                 <div style="margin-top: 1rem;">
                     <a href="profile.html" target="_blank"
                         style="color: #aaa; font-size: 0.8rem; text-decoration: underline;">View Public Profile ↗</a>
@@ -362,7 +362,7 @@
                     <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                         <input type="text" class="form-control" placeholder="Paste video URL here...">
                         <button type="button" class="btn-sm" data-action="add-video"
-                            style="background: var(--color-teal); color: black; border: none; white-space: nowrap;">Add
+                            style="background: var(--color-purple); color: black; border: none; white-space: nowrap;">Add
                             Video</button>
                     </div>
                 </div>
@@ -373,7 +373,7 @@
                 <div class="section-header">
                     <h2>Event History</h2>
                     <button type="button" class="btn-sm" data-action="add-event"
-                        style="background: var(--color-teal); color: black; border: none;">+ Add Event</button>
+                        style="background: var(--color-purple); color: black; border: none;">+ Add Event</button>
                 </div>
 
                 <p style="color: #aaa; margin-bottom: 2rem;">Showcase your major performances to build credibility.
@@ -381,7 +381,7 @@
 
                 <div class="event-card">
                     <div>
-                        <h3 style="color: var(--color-teal); margin-bottom: 0.2rem;">Tathastu India Tour</h3>
+                        <h3 style="color: var(--color-purple); margin-bottom: 0.2rem;">Tathastu India Tour</h3>
                         <p style="color: #ddd;">Main Act • 15 Cities, India</p>
                         <p style="color: #888; font-size: 0.9rem; margin-top: 0.5rem;">Sold out arena tour across major
                             metropolitan cities.</p>
@@ -395,7 +395,7 @@
 
                 <div class="event-card">
                     <div>
-                        <h3 style="color: var(--color-teal); margin-bottom: 0.2rem;">Amazon Prime Special Recording</h3>
+                        <h3 style="color: var(--color-purple); margin-bottom: 0.2rem;">Amazon Prime Special Recording</h3>
                         <p style="color: #ddd;">Headliner • NSCI Dome, Mumbai</p>
                         <p style="color: #888; font-size: 0.9rem; margin-top: 0.5rem;">Live recording for international
                             streaming platform.</p>
@@ -413,7 +413,7 @@
                 <div class="section-header">
                     <h2>Client Testimonials</h2>
                     <button type="button" class="btn-sm" data-action="add-review"
-                        style="background: var(--color-teal); color: black; border: none;">+ Add Review</button>
+                        style="background: var(--color-purple); color: black; border: none;">+ Add Review</button>
                 </div>
 
                 <div class="event-card" style="flex-direction: column; align-items: flex-start;">
@@ -426,7 +426,7 @@
                         entire crowd in splits for straight 90 minutes. Ultimate professional."</p>
                     <div>
                         <h4 style="color: var(--color-white); margin-bottom: 0.2rem;">Rahul Verma</h4>
-                        <p style="font-size: 0.8rem; color: var(--color-teal);">Organizer, Canvas Laugh Club</p>
+                        <p style="font-size: 0.8rem; color: var(--color-purple);">Organizer, Canvas Laugh Club</p>
                     </div>
                 </div>
             </div>
@@ -616,8 +616,8 @@
 
                 ['dragenter', 'dragover'].forEach(eventName => {
                     coverImageUpload.addEventListener(eventName, () => {
-                        coverImageUpload.style.borderColor = 'var(--color-teal)';
-                        coverImageUpload.style.background = 'rgba(0, 206, 209, 0.05)';
+                        coverImageUpload.style.borderColor = 'var(--color-purple)';
+                        coverImageUpload.style.background = 'rgba(157, 78, 221, 0.05)';
                     }, false);
                 });
 

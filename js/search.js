@@ -70,11 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     <ul style="list-style: none; padding: 0;">`;
                 
                 filteredArtists.forEach(artist => {
-                    html += `<li style="margin-bottom: 0.5rem;"><a href="${artist.link}" style="color: var(--color-teal); text-decoration: none; font-size: 1.1rem;">${artist.name}</a> <span style="color: #666; font-size: 0.8rem;">- ${artist.category}</span></li>`;
+                    html += `<li style="margin-bottom: 0.5rem;"><a href="${artist.link}" style="color: var(--color-purple); text-decoration: none; font-size: 1.1rem;">${artist.name}</a> <span style="color: #666; font-size: 0.8rem;">- ${artist.category}</span></li>`;
                 });
 
                 filteredCategories.forEach(cat => {
-                    html += `<li style="margin-bottom: 0.5rem;"><a href="${cat.link}" style="color: var(--color-teal); text-decoration: none; font-size: 1.1rem;">${cat.name}</a> <span style="color: #666; font-size: 0.8rem;">- Category</span></li>`;
+                    html += `<li style="margin-bottom: 0.5rem;"><a href="${cat.link}" style="color: var(--color-purple); text-decoration: none; font-size: 1.1rem;">${cat.name}</a> <span style="color: #666; font-size: 0.8rem;">- Category</span></li>`;
                 });
 
                 if(filteredArtists.length === 0 && filteredCategories.length === 0) {
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const pills = resultsContainer.querySelectorAll('a');
                 pills.forEach(pill => {
                     pill.style.cssText = "color: #aaa; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); padding: 0.2rem 1rem; border-radius: 20px; font-size: 0.9rem; transition: all 0.3s; margin-right: 0.5rem;";
-                    pill.onmouseover = function() { this.style.color='var(--color-teal)'; this.style.borderColor='var(--color-teal)'; };
+                    pill.onmouseover = function() { this.style.color='var(--color-purple)'; this.style.borderColor='var(--color-purple)'; };
                     pill.onmouseout = function() { this.style.color='#aaa'; this.style.borderColor='rgba(255,255,255,0.2)'; };
                 });
             }

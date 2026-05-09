@@ -262,7 +262,7 @@
 .text-anim-typewriter {
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid var(--color-teal);
+  border-right: 2px solid var(--color-purple);
   width: 0;
 }
 .text-anim-typewriter.is-animated {
@@ -270,7 +270,7 @@
 }
 @keyframes blinkCursor {
   from, to { border-color: transparent }
-  50% { border-color: var(--color-teal); }
+  50% { border-color: var(--color-purple); }
 }
 
 /* 3. Wave */
@@ -282,7 +282,7 @@
 }
 @keyframes textWave {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); color: var(--color-teal); }
+  50% { transform: translateY(-10px); color: var(--color-purple); }
 }
 
 /* 4. Glitch */
@@ -306,7 +306,7 @@
 }
 .text-anim-glitch.is-animated::after {
   left: -2px;
-  text-shadow: -1px 0 var(--color-teal);
+  text-shadow: -1px 0 var(--color-purple);
   clip: rect(44px, 450px, 56px, 0);
   animation: glitch-anim2 5s infinite linear alternate-reverse;
 }
@@ -381,7 +381,7 @@
   height: 3px;
   bottom: -4px;
   left: 0;
-  background-color: var(--color-teal);
+  background-color: var(--color-purple);
   transition: width 0.8s ease-in-out;
 }
 .text-anim-underline.is-animated::after {
@@ -415,7 +415,7 @@
   content: attr(data-text);
   position: absolute;
   left: 0; top: 0;
-  color: var(--color-teal);
+  color: var(--color-purple);
   width: 0;
   overflow: hidden;
   transition: width 1s ease;
