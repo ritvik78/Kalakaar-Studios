@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function drawParticles() {
             ctx.clearRect(0, 0, width, height);
-            ctx.fillStyle = 'rgba(0, 229, 204, 0.8)'; // Teal color from variables
+            ctx.fillStyle = 'rgba(157, 78, 221, 0.8)'; // Teal color from variables
 
             particles.forEach(p => {
                 ctx.beginPath();
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Draw connections
-            ctx.strokeStyle = 'rgba(0, 229, 204, 0.1)';
+            ctx.strokeStyle = 'rgba(157, 78, 221, 0.1)';
             ctx.lineWidth = 0.5;
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i + 1; j < particles.length; j++) {

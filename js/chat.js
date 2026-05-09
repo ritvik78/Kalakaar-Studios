@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (who === 'user') {
             wrapper.style.alignSelf = 'flex-end';
-            wrapper.style.background = 'rgba(0,229,204,0.12)';
-            wrapper.style.border = '1px solid rgba(0,229,204,0.25)';
+            wrapper.style.background = 'rgba(157, 78, 221,0.12)';
+            wrapper.style.border = '1px solid rgba(157, 78, 221,0.25)';
         } else {
             wrapper.style.alignSelf = 'flex-start';
             wrapper.style.background = 'rgba(255,255,255,0.1)';

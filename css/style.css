@@ -651,8 +651,8 @@
 
 .timeline-content:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 229, 204, 0.2);
-  border-color: rgba(0, 229, 204, 0.3);
+  box-shadow: 0 10px 30px rgba(157, 78, 221, 0.2);
+  border-color: rgba(157, 78, 221, 0.3);
 }
 
 .timeline-content h3 {
@@ -723,7 +723,7 @@
 }
 .wizard-radio-card.selected .radio-card-content,
 .wizard-checkbox-card.selected .checkbox-card-content {
-  background: rgba(0, 229, 204, 0.1);
+  background: rgba(157, 78, 221, 0.1);
   border-color: var(--color-teal);
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
