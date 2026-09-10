@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, MouseEvent } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, HTMLMotionProps } from "framer-motion";
 import { cn } from "@/utils/cn";
 import { useCursor } from "./global/Providers";
 
@@ -12,7 +12,7 @@ interface Bubble {
   size: number;
 }
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends Omit<HTMLMotionProps<"button">, "variant" | "size"> {
   variant?: "metal" | "gold" | "red" | "glass";
   size?: "sm" | "md" | "lg";
   glow?: boolean;
