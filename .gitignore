@@ -1,17 +1,18 @@
-# OS / editor
-.DS_Store
-Thumbs.db
-Desktop.ini
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Local environment
+.env*
 
 # Logs
 *.log
 
-# VS Code
+# OS and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
 .vscode/
-
-# Copilot/tooling
-.blackbox/
-
-# Build/output
-/dist/
-/build/
